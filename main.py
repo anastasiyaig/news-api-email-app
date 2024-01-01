@@ -1,10 +1,11 @@
+import os
 from datetime import datetime, date, timedelta
 
 import requests
 
 import send_email
 
-api_key = 'ee89c4486b5446dcb8f32294f5721f45'
+api_key = os.getenv('NEWS_API_KEY')
 topic = "tesla"
 language = "en"
 from_date = str(date.today() - timedelta(days=1))
