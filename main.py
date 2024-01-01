@@ -21,7 +21,7 @@ body = ''
 # Access the article titles and descriptions
 for article in content['articles'][:20]:
     if article['title'] and article['description'] and article['url']:
-        body = body + article['title'] + "\n" + article['description'] + "\n" + article['url'] + 2*"\n"
+        body = "Subject: Today's news" + "\n" + body + article['title'] + "\n" + article['description'] + "\n" + article['url'] + 2*"\n"
 
 composed_email = str(body).encode("utf-8")
 send_email.send_email(composed_email)
